@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Application</title>
+    <link rel="stylesheet" href="/static/style2.css">
+</head>
+<body>
+    <header>
+        <h1 id="header-heading">
+            JEC Scholarship Applications
+        </h1>
+        <a id="logout-btn" href="{% url "logout" %}"> Logout</a>
+    </header>
+    <h1 id="welcomeHeading">Welcome to JEC Scholarship Application</h1>
+    {% if stageCom == "s4" %}
+        <section id="body_section">
+            <h2 id="firstName">First Name : {{firstname}}</h2>
+            <h2 id="lastName">Last Name : {{lastname}}</h2>
+            <h2 id="formStatus"> Form Status :<a style="color: {{ color }};"> {{ status }}</a></h2>
+            {% comment %} if form accepted or pending then dont show if rejected show with message   {% endcomment %}
+            <h2 id="message">Message : {{ message | safe }}</h2> 
+        </section>
+    {% else %}
+        {% if stageCom == "" %}
+            <section>
+                <h1 style="color: red;">You have NOT fill the Application Form.</h1>
+                <a id="application_link" href="{% url urlCome %}">Application Form</a>
+            </section>
+        {% else %}
+            <section>
+                <h1 style="color: red;">You have NOT filled Application Form COMPLETELY.</h1>
+                <a id="application_link" href="{% url urlCome %}">CLICK TO CONTINUE</a>
+            </section>
+        {% endif %}
+    {% endif %}
+    
+</body>
+</html>

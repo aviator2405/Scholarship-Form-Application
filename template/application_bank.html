@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEC Scholarship Application</title>
+    <link rel="stylesheet" href="/static/style5.css">
+</head>
+<body>
+    <header>
+        <h1 id="header-heading">
+            JEC Scholarship Applications
+        </h1>
+        <a id="logout-btn" href="{% url "logout" %}"> Logout</a>
+    </header>
+    <section>
+        <h1 id="form-heading" href="{% url "logout" %}">JEC Scholarship Application</h1>
+        <div id="form_container">
+            <h1 class="sideHeadings" id="perInfoHead">Bank Details</h1>
+            <form id="login-form" action="{% url "appDocInfo" %}" method="POST">
+                {% csrf_token %}
+                <div id="left_form_section">
+                    <label for="username" class="labels">Account Holder's Name</label>
+                    <label for="password" class="labels"> Account Number</label>
+                    <label for="gender" class="labels">Bank Name</label>
+                    <label for="category" class="labels">Branch Name</label>
+                    <label for="category" class="labels">IFSC Code</label>
+                
+                </div>
+                <div id="right_form_section">
+                    <input type="text" name="acc_name" id="acc_num_name" class="input_fields" required>
+                    <input type="text" name="acc_num" id="dob_input" class="input_fields" required>
+                    <input type="text" name="bank_name" id="dob_input" class="input_fields" required>
+                    <input type="text" name="branch_name" id="dob_input" class="input_fields" required>
+                    <input type="text" name="ifsc" id="dob_input" class="input_fields" maxlength="11" required>
+                    <div style="text-align: right;">
+                        <input type="submit" value="Next" class="form-btn">
+                        <input type="reset" value="Reset" id="reset_btn" class="form-btn">
+                    </div>
+                </div>
+            </form><br>
+        </div>
+    </section>
+</body>
+</html>

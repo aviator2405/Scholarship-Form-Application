@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEC Scholarship Application</title>
+    <link rel="stylesheet" href="/static/style3.css">
+</head>
+<body>
+    <header>
+        <h1 id="header-heading">
+            JEC Scholarship Applications
+        </h1>
+        <a id="logout-btn" href="{% url "logout" %}"> Logout</a>
+    </header>
+    <section>
+        <h1 id="form-heading">JEC Scholarship Application</h1>
+        <div id="form_container">
+            <h1 class="sideHeadings" id="perInfoHead">Personal Information</h1>
+            <form id="login-form" action="{% url "appEduInfo" %}" method="POST">
+                {% csrf_token %}
+                <div id="left_form_section">
+                    <label for="username" class="labels">Full Name</label>
+                    <label for="password" class="labels">Date of Birth</label>
+                    <label for="gender" class="labels">Gender</label>
+                    <label for="category" class="labels">Category</label>
+                    <label for="category" class="labels">Caste Certificate Number</label>
+                    <label for="category" class="labels">Aadhaar Number</label>
+                    <label for="category" class="labels">Father's/Guardian's Name</label>
+                    <label for="category" class="labels">Phone Number</label>
+                    <label for="category" class="labels">Email</label>
+                    <label for="category" class="labels">Annual Income</label>
+                    <label for="category" class="labels">Permanent Address</label>
+                    <label for="category" class="labels">Pincode</label>
+                </div>
+                <div id="right_form_section">
+                    <input type="text" name="full_name" id="full_name_input" class="input_fields" required>
+                    <input type="date" name="dob" id="dob_input" class="input_fields" required>
+                    <div class="radio-btn-containers">
+                        <input type="radio" name="gender" id="gen_input_male" value="male" cheacked required><label class="radio_labels">Male</label>
+                        <input type="radio" name="gender" id="gen_input_female" value="female"><label class="radio_labels">Female</label>
+                        <input type="radio" name="gender" id="gen_input_others" value="others"><label class="radio_labels">Others</label>
+                    </div>
+                    <div class="radio-btn-containers">
+                        <input type="radio" name="category" id="cat_input_sc" cheacked required><label class="radio_labels">SC</label>
+                        <input type="radio" name="category" id="cat_input_st" ><label class="radio_labels">ST</label>
+                        <input type="radio" name="category" id="cat_input_obc"><label class="radio_labels">OBC</label>
+                        <input type="radio" name="category" id="cat_input_others"><label class="radio_labels">Others</label>
+                    </div>
+                    <input type="text" name="cat_certi_no" id="cat_certi_no" class="input_fields" required>
+                    <input type="text" name="aadhaar_number" id="cat_certi_no" class="input_fields" required>
+                    <input type="text" name="father_name" id="cat_certi_no" class="input_fields" required>
+                    <input type="text" name="phone" id="cat_certi_no" class="input_fields" required maxlength="10">
+                    <input type="email" name="email" class="input_fields" required>
+                    <input type="text" name="annual_income" class="input_fields" required>
+                    <input type="text" name="address" class="input_fields" required>
+                    <input type="text" name="pincode" class="input_fields" maxlength="6" required>
+                    <div style="text-align: right;">
+                        <input type="submit" value="Next" class="form-btn">
+                        <input type="reset" value="Reset" id="reset_btn" class="form-btn">
+                    </div>
+                </div>
+            </form><br>
+            
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Application</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1 id="header-heading">
+            JEC Scholarship Applications
+        </h1>
+    </header>
+    <marquee style="font-size: x-large; margin-top: 20px; background-color: red; color: white;">{{form_sub_message}}</marquee>
+    <section>
+        <div id="form_container">
+            <h1 id="form-heading">Login</h1>
+            <form id="login-form" action={% url "profile" %} method="post">
+                {% csrf_token %}
+                <span id="credMsg" style=color:red;>{{ credMsg }}</span><br>
+                <label for="username" id="user_label" class="labels">Username</label><br>
+                <input type="text" name="username" id="username_input" class="input_fields" required><br>
+                
+                <label for="password" id="password_label" class="labels">Password</label><br>
+                <input type="password" name="password" id="password_input" class="input_fields" required><br>
+                
+                <label for="desig" id="desig_label" class="labels">Login As?</label><br>
+                <input type="radio" name="desig" id="desig_input_stu" class="input_fields" value="student" required checked>Student
+                <input type="radio" name="desig" id="desig_input_hod" class="input_fields" value="hod">HOD
+                <input type="radio" name="desig" id="desig_input_pri" class="input_fields" value="principal">Principal<br>
+
+                <input type="submit" value="Submit" class="form-btn">
+                <input type="reset" value="Reset" id="reset_btn" class="form-btn"><br>
+
+                <label for="password" id="new_user" class="labels"><a href="{% url "newuser" %}"> New User ?</a></label><br>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

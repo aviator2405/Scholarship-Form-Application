@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEC Scholarship Application</title>
+    <link rel="stylesheet" href="/static/style4.css">
+</head>
+<body>
+    <header>
+        <h1 id="header-heading">
+            JEC Scholarship Applications
+        </h1>
+        <a id="logout-btn" href="{% url "logout" %}"> Logout</a>
+    </header>
+    <section>
+        <h1 id="form-heading">JEC Scholarship Application</h1>
+        <div id="form_container">
+            <h1 class="sideHeadings" id="perInfoHead">Education Information</h1>
+            <form id="login-form" action="{% url "appBanInfo" %}" method="post">
+                {% csrf_token %}
+                <div id="left_form_section">
+                    <label for="username" class="labels">Education Level</label>
+                    <label for="password" class="labels">Name of Institution</label>
+                    <label for="gender" class="labels">Address</label>
+                    <label for="category" class="labels">Enrollment No.</label>
+                    <label for="category" class="labels">Program/Cousre</label>
+                    <label for="category" class="labels">Year of Study</label>
+                    <label for="category" class="labels">Percentage/CGPA</label>
+                    <label for="category" class="labels">Year of Passing</label>
+                    <label for="category" class="labels">Previous Exam Marksheet</label>
+                </div>
+                <div id="right_form_section">
+                    <select id="courses" name="edu_level" class="input_fields" required>
+                        <option value="">--Please choose an option--</option>
+                        <option value="high school">High School</option>
+                        <option value="Under Graduate">Under Graduate</option>
+                        <option value="Post Graduate">Post Graduade</option>
+                        <option value="Ph.D.">Ph.D.</option>
+                    </select>
+                    <input type="text" name="institute_name" id="dob_input" class="input_fields" required>
+                    <input type="text" name="inst_address" id="dob_input" class="input_fields" required>
+                    <input type="text" name="enrollment" id="dob_input" class="input_fields" required>
+                    <input type="text" name="course" id="dob_input" class="input_fields" required>
+                    
+                    <select name="study_year" class="input_fields" required>
+                        <option value="">--Please choose an option--</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <input type="text" name="percentage" id="dob_input" class="input_fields" required>
+                    <input type="text" name="passing_year" id="dob_input" class="input_fields" required maxlength="4">
+                    <input type="file" name="marksheet" id="dob_input" class="input_fields" required>
+                    <div style="text-align: right;">
+                        <input type="submit" value="Next" class="form-btn">
+                        <input type="reset" value="Reset" id="reset_btn" class="form-btn">
+                    </div>
+                </div>
+            </form><br>
+            
+        </div>
+    </section>
+</body>
+</html>

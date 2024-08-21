@@ -1,0 +1,101 @@
+*{
+    margin : 0px;
+    border: 0px;
+}
+#header-heading{
+    display: inline-block;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 12%;
+}
+header{
+    background-color: wheat;
+    text-align: left;
+}
+#logout-btn{
+    font-size: x-large;
+    background-color: red;
+    padding: 1%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px black;
+    color: whitesmoke;
+    margin-left: 40%;
+}
+#form_container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 10%;
+    width:75%;
+    height: fit-content;
+    text-align: center;
+    padding: 2%;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: double;
+}
+.form-btn{
+    font-size: large;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px black;
+    display: inline-block;
+    margin: 10px;
+    margin-top: 5%;
+}
+#form-heading{
+    margin-top: 2%;
+    font-size: 50px;
+    text-decoration: underline;
+
+}
+.labels{
+    margin: 10px 10px 10px 10px;
+    display: inline-block;
+    color: black;
+    font-size: large;
+}
+.input_fields{
+    margin-top: 12px;
+    font-size: large;
+    border-width: 2px;
+    border-style: dotted;
+    width: 95%;
+}
+#login-form{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+#left_form_section{
+    display: inline-flex;
+    flex-direction: column;
+    width:15%;
+    text-align: left;
+}
+#right_form_section{
+    display: inline-flex;
+    flex-direction: column;
+    width: 85%;
+}
+.radio_labels{
+    display: inline-block;
+    margin-top: 18px;
+    margin-right: 20px;
+    font-size: large;
+}
+.radio-btn-containers{
+    text-align: left;
+}
+.sideHeadings{
+    text-align: left;
+}
+#cat_certi_no{
+    margin-top: 28px;
+}
+a{
+    text-decoration: none;
+}
+body{
+    text-align: center;
+    /* display: flex; */
+}

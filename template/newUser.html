@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Application</title>
+    <link rel="stylesheet" href="/static/style9.css">
+</head>
+<body>
+    <header>
+        <h1 id="header-heading">
+            JEC Scholarship Applications
+        </h1>
+    </header>
+    <section>
+        <div id="form_container">
+            <h1 id="form-heading">New User</h1>
+            <form id="login-form" action={% url "newuser" %} method = "POST">
+                {% csrf_token %}
+                <label for="username" id="username-label" class="labels">Create Username</label><br>
+                <input type="text" name="username" id="username-field" class="input_fields" required><br>
+                <span class="" id="usernameFeedback"></span><br>
+
+
+                <label for="password" id="password_label" class="labels">Password</label><br>
+                <input type="password" name="password" id="password-field" class="input_fields" required><br>
+                
+                <label for="password" id="password_label" class="labels">Confirm Password</label><br>
+                <input type="password" name="password" id="re-password-field" class="input_fields" required><br>
+                
+                <label for="desig" id="desig_label" class="labels">Designation</label><br>
+                <input type="radio" name="desig" id="desig_input_stu" class="input_fields" value="student">Student
+                <input type="radio" name="desig" id="desig_input_hod" class="input_fields" value="hod">HOD
+                <input type="radio" name="desig" id="desig_input_pri" class="input_fields" value="principal">Principal<br>
+
+                <label for="password" id="password_label" class="labels">First Namae</label><br>
+                <input type="text" name="firstName" id="firstname-field" class="input_fields" required><br>
+
+                <label for="password" id="password_label" class="labels">Last Name</label><br>
+                <input type="text" name="lastName" id="lastname-field" class="input_fields" required><br>
+
+                <label for="password" id="password_label" class="labels">Email</label><br>
+                <input type="emails" name="email" id="email-field" class="input_fields" required><br>
+                
+                <input type="submit" value="Submit" class="form-btn" id="submit_button">
+                <input type="reset" value="Reset" id="reset_btn" class="form-btn">
+            </form>
+        </div>
+    </section>
+    <script src="/static/newUser.js"></script>
+</body>
+</html>

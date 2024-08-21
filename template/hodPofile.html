@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEC Scholarship Application</title>
+    <link rel="stylesheet" href="/static/style7.css">
+</head>
+<body>
+    <!-- Include this in your template to ensure the CSRF token is set -->
+    {% csrf_token %}
+
+    <header>
+        <h1 id="header-heading">
+            JEC Scholarship Applications
+        </h1>
+        <a id="logout-btn" href ="{% url "logout" %}"> Logout</a>
+    </header>
+    
+    <h1 class="body_center" id="welcomeHeading">Welcome to JEC Scholarship Application</h1>
+    
+    <section id="container">
+        <!-- dynamically creating the applications displayer -->
+    </section>
+    <script src="/static/hod.js"></script>
+</body>
+</html>
