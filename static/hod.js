@@ -129,6 +129,14 @@ fetch('http://127.0.0.1:8000/api/users/approvedByHOD/')
             userID: user[0].id 
         }));
         console.log(combinedData);
+        if (combinedData.length == 0){
+            const statusholder = document.createElement('div');
+            const welcomeheading = document.getElementById("welcomeHeading")
+            welcomeheading.appendChild(statusholder)
+            statusholder.classList.add("statusholderstyle")
+            statusholder.textContent = "No more Forms"
+            // document.write("No more Forms")
+        }
         populateUI(combinedData);
     })
     .catch(error => console.error('Error fetching data:', error));

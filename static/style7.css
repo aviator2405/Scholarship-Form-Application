@@ -100,3 +100,9 @@ a{
 .statusText.accepted {
     color: green;
 }
+.statusholderstyle{
+    display: block;
+    margin-top: 10%;
+    font-size: large;
+    color :red;
+}
